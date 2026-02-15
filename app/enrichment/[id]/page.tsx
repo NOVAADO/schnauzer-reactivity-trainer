@@ -48,7 +48,7 @@ export default function EnrichmentDetailPage() {
   if (!activity) {
     return (
       <div className="py-8 text-center">
-        <p className="text-gray-500">Activite introuvable</p>
+        <p className="text-gray-500">Activité introuvable</p>
         <button onClick={() => router.back()} className="mt-4 text-blue-600 font-semibold">
           Retour
         </button>
@@ -96,9 +96,9 @@ export default function EnrichmentDetailPage() {
   }
 
   const DIFFICULTY_LABELS: Record<number, string> = {
-    1: 'Debutant',
-    2: 'Intermediaire',
-    3: 'Avance',
+    1: 'Débutant',
+    2: 'Intermédiaire',
+    3: 'Avancé',
   };
 
   const DIFFICULTY_COLORS: Record<number, string> = {
@@ -114,15 +114,15 @@ export default function EnrichmentDetailPage() {
         <span className="text-6xl block mb-4">🎉</span>
         <h1 className="text-2xl font-bold mb-2">Bravo !</h1>
         <p className="text-gray-600 mb-2">
-          Activite « {activity.name} » terminee !
+          Activité « {activity.name} » terminée !
         </p>
         <p className="text-sm text-gray-500 mb-6">
-          Chaque repetition renforce l{"'"}apprentissage. Reviens demain !
+          Chaque répétition renforce l{"'"}apprentissage. Reviens demain !
         </p>
 
         {/* Benefits recap */}
         <div className="bg-green-50 rounded-2xl p-4 mb-4 text-left mx-4">
-          <h3 className="font-semibold text-green-800 mb-2">Ce que ca apporte :</h3>
+          <h3 className="font-semibold text-green-800 mb-2">Ce que ça apporte :</h3>
           <ul className="text-sm text-green-700 space-y-1">
             {activity.benefits.map((b, i) => (
               <li key={i} className="flex gap-2">
@@ -183,7 +183,7 @@ export default function EnrichmentDetailPage() {
         {/* Materials checklist */}
         {activity.materials && activity.materials.length > 0 && (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-4">
-            <h3 className="font-semibold text-amber-800 mb-2">Materiel necessaire</h3>
+            <h3 className="font-semibold text-amber-800 mb-2">Matériel nécessaire</h3>
             <div className="space-y-2">
               {activity.materials.map((mat, i) => (
                 <button
@@ -231,7 +231,7 @@ export default function EnrichmentDetailPage() {
 
         {/* Benefits preview */}
         <div className="bg-green-50 rounded-2xl p-4 mb-4">
-          <h3 className="font-semibold text-green-800 mb-2">Benefices</h3>
+          <h3 className="font-semibold text-green-800 mb-2">Bénéfices</h3>
           <ul className="text-sm text-green-700 space-y-1">
             {activity.benefits.map((b, i) => (
               <li key={i} className="flex gap-2">
@@ -254,7 +254,7 @@ export default function EnrichmentDetailPage() {
           onClick={() => setPhase('steps')}
           className="w-full p-4 bg-purple-600 text-white rounded-xl text-lg font-semibold active:bg-purple-700 transition-colors"
         >
-          Commencer ({totalSteps} etapes)
+          Commencer ({totalSteps} étapes)
         </button>
       </div>
     );
@@ -269,7 +269,7 @@ export default function EnrichmentDetailPage() {
       <div className="mb-4">
         <div className="flex justify-between text-xs text-gray-500 mb-1">
           <span>{activity.name}</span>
-          <span>Etape {currentStep + 1}/{totalSteps}</span>
+          <span>Étape {currentStep + 1}/{totalSteps}</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div
@@ -314,7 +314,7 @@ export default function EnrichmentDetailPage() {
                 {timeRemaining > 0 ? timeRemaining : '✓'}
               </div>
               <div className="text-sm text-gray-500">
-                {timeRemaining > 0 ? 'secondes restantes' : 'Temps ecoule !'}
+                {timeRemaining > 0 ? 'secondes restantes' : 'Temps écoulé !'}
               </div>
               {timerRunning && (
                 <button
@@ -348,7 +348,7 @@ export default function EnrichmentDetailPage() {
               : 'border-2 border-purple-500 text-purple-600 active:bg-purple-50'
           }`}
         >
-          ← Precedent
+          ← Précédent
         </button>
         <button
           onClick={handleNextStep}
@@ -360,7 +360,7 @@ export default function EnrichmentDetailPage() {
 
       {/* Quick reminder */}
       <div className="mt-4 bg-green-50 border border-green-200 rounded-xl p-3 text-xs text-green-700 text-center">
-        Recompense chaque petit progres ! Le plaisir est la cle de l{"'"}apprentissage.
+        Récompense chaque petit progrès ! Le plaisir est la clé de l{"'"}apprentissage.
       </div>
     </div>
   );

@@ -46,9 +46,9 @@ const DIFFICULTY_STARS: Record<number, string> = {
 };
 
 const DIFFICULTY_LABELS: Record<number, string> = {
-  1: 'Debutant',
-  2: 'Intermediaire',
-  3: 'Avance',
+  1: 'Débutant',
+  2: 'Intermédiaire',
+  3: 'Avancé',
 };
 
 function isPrerequisiteMet(prerequisite: string | undefined, completedExerciseIds: Set<string>): boolean {
@@ -94,9 +94,9 @@ export default function EnrichmentPage() {
       {/* Intro card */}
       <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-4 mb-6">
         <p className="text-sm text-purple-800">
-          <strong>Au-dela de l{"'"}obeissance !</strong> Ces activites renforcent la confiance,
+          <strong>Au-delà de l{"'"}obeissance !</strong> Ces activités renforcent la confiance,
           fatiguent le cerveau et rendent ton chien plus heureux. 15 min de stimulation mentale
-          = 1 heure de promenade en depense.
+          = 1 heure de promenade en dépense.
         </p>
       </div>
 
@@ -139,7 +139,7 @@ export default function EnrichmentPage() {
                           </div>
                           {!unlocked && activity.prerequisite && (
                             <div className="text-xs text-amber-600 mt-1">
-                              Prerequis : {getPrerequisiteName(activity.prerequisite)}
+                              Prérequis : {getPrerequisiteName(activity.prerequisite)}
                             </div>
                           )}
                         </div>
@@ -158,10 +158,10 @@ export default function EnrichmentPage() {
       <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mt-2">
         <h3 className="font-bold text-green-800 mb-2">Conseils pour l{"'"}enrichissement</h3>
         <ul className="text-sm text-green-700 space-y-1.5">
-          <li>Commence par les activites ⭐ (debutant)</li>
+          <li>Commence par les activités ⭐ (débutant)</li>
           <li>Sessions courtes : 3-5 minutes max pour les tricks</li>
           <li>Termine TOUJOURS sur un succes (meme petit)</li>
-          <li>Varie les activites pour garder la motivation</li>
+          <li>Varie les activités pour garder la motivation</li>
           <li>Le reniflage et le lechage calment naturellement le chien</li>
           <li>Un chien fatigue mentalement est un chien calme !</li>
         </ul>

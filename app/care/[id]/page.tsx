@@ -75,8 +75,8 @@ export default function CareDetailPage() {
     return (
       <div className="py-16 text-center">
         <span className="text-5xl">✅</span>
-        <p className="text-lg font-semibold mt-4">Soin enregistre !</p>
-        <p className="text-sm text-gray-500 mt-1">Bravo, chaque petite etape compte.</p>
+        <p className="text-lg font-semibold mt-4">Soin enregistré !</p>
+        <p className="text-sm text-gray-500 mt-1">Bravo, chaque petite étape compte.</p>
       </div>
     );
   }
@@ -127,7 +127,7 @@ export default function CareDetailPage() {
       {/* Step selector */}
       <div className="mb-4">
         <label className="text-sm font-medium text-gray-700 mb-2 block">
-          Etape du programme (jour {step.day ?? currentStep + 1})
+          Étape du programme (jour {step.day ?? currentStep + 1})
         </label>
         <div className="flex gap-1.5 flex-wrap">
           {task.steps.map((s, i) => (
@@ -156,7 +156,7 @@ export default function CareDetailPage() {
           </div>
           <div>
             <p className="font-medium leading-relaxed">{step.instruction}</p>
-            <p className="text-xs text-gray-400 mt-2">Duree : ~{step.durationSeconds} secondes</p>
+            <p className="text-xs text-gray-400 mt-2">Durée : ~{step.durationSeconds} secondes</p>
           </div>
         </div>
       </div>
@@ -164,13 +164,13 @@ export default function CareDetailPage() {
       {/* Important reminder */}
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-4 text-xs text-amber-800">
         <strong>Rappel :</strong> 10 secondes positives valent mieux que 30 secondes de lutte.
-        Si le chien montre du stress, arrete et recompense ce qui a ete bien fait.
+        Si le chien montre du stress, arrête et récompense ce qui a été bien fait.
       </div>
 
       {/* Tolerance level */}
       <div className="mb-4">
         <label className="text-sm font-medium text-gray-700 mb-2 block">
-          Tolerance du chien : <strong>{tolerance}/5</strong>
+          Tolérance du chien : <strong>{tolerance}/5</strong>
         </label>
         <div className="flex gap-2">
           {[1, 2, 3, 4, 5].map((n) => (
@@ -196,7 +196,7 @@ export default function CareDetailPage() {
         </div>
         {tolerance <= 2 && (
           <p className="text-xs text-red-600 mt-2 bg-red-50 rounded-lg p-2">
-            Tolerance faible — reviens a l{"'"}etape precedente la prochaine fois. Termine sur une note positive maintenant.
+            Tolérance faible — reviens à l{"'"}étape précédente la prochaine fois. Termine sur une note positive maintenant.
           </p>
         )}
       </div>
@@ -207,7 +207,7 @@ export default function CareDetailPage() {
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          placeholder="Ex : A bien accepte la brosse sur le dos"
+          placeholder="Ex : A bien accepté la brosse sur le dos"
           rows={2}
           className="w-full p-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />

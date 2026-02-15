@@ -17,8 +17,8 @@ export default function ReactivityPage() {
 
   return (
     <div className="py-4">
-      <h1 className="text-2xl font-bold mb-1">Reactivite</h1>
-      <p className="text-sm text-gray-500 mb-6">Protocoles de desensibilisation et journal d{"'"}incidents</p>
+      <h1 className="text-2xl font-bold mb-1">Réactivité</h1>
+      <p className="text-sm text-gray-500 mb-6">Protocoles de désensibilisation et journal d{"'"}incidents</p>
 
       {/* Quick incident button */}
       <Link href="/reactivity/incident">
@@ -63,21 +63,21 @@ export default function ReactivityPage() {
       <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-4 mb-4">
         <h2 className="font-bold text-indigo-800 mb-2">Comprendre le seuil d{"'"}apprentissage</h2>
         <p className="text-sm text-indigo-700 mb-3">
-          Ton chien ne peut apprendre QUE quand il est sous son seuil de reaction.
-          Au-dessus, son cerveau est en mode survie — il ne peut pas reflechir.
+          Ton chien ne peut apprendre QUE quand il est sous son seuil de réaction.
+          Au-dessus, son cerveau est en mode survie — il ne peut pas réfléchir.
         </p>
         <div className="space-y-2 text-sm text-indigo-700">
           <div className="flex gap-2 items-start">
             <span className="font-bold text-green-600">1-2</span>
-            <span>ZONE D{"'"}APPRENTISSAGE — Le chien peut te regarder, prendre des gateries, obeir. C{"'"}est ici que tu travailles.</span>
+            <span>ZONE D{"'"}APPRENTISSAGE — Le chien peut te regarder, prendre des gâteries, obéir. C{"'"}est ici que tu travailles.</span>
           </div>
           <div className="flex gap-2 items-start">
             <span className="font-bold text-yellow-600">3</span>
-            <span>ZONE LIMITE — Le chien remarque le stimulus mais peut encore se concentrer. Recompense beaucoup ici.</span>
+            <span>ZONE LIMITE — Le chien remarque le stimulus mais peut encore se concentrer. Récompense beaucoup ici.</span>
           </div>
           <div className="flex gap-2 items-start">
             <span className="font-bold text-red-600">4-5</span>
-            <span>AU-DESSUS DU SEUIL — Aboiements, tire, ne prend plus de gateries. STOP. Eloigne-toi. Rien a apprendre ici.</span>
+            <span>AU-DESSUS DU SEUIL — Aboiements, tire, ne prend plus de gâteries. STOP. Éloigne-toi. Rien à apprendre ici.</span>
           </div>
         </div>
       </div>
@@ -86,8 +86,8 @@ export default function ReactivityPage() {
       <div className="bg-purple-50 border border-purple-200 rounded-2xl p-4 mb-4">
         <h2 className="font-bold text-purple-800 mb-2">Alternatives au &quot;NON&quot;</h2>
         <p className="text-sm text-purple-700 mb-3">
-          Dire NON ne fonctionne pas avec les chiens reactifs. Ca ajoute du stress.
-          A la place, propose un comportement de remplacement :
+          Dire NON ne fonctionne pas avec les chiens réactifs. Ça ajoute du stress.
+          À la place, propose un comportement de remplacement :
         </p>
         <div className="space-y-2 text-sm">
           <div className="bg-white rounded-xl p-3 flex justify-between">
@@ -100,18 +100,18 @@ export default function ReactivityPage() {
           </div>
           <div className="bg-white rounded-xl p-3 flex justify-between">
             <span className="text-red-600 line-through">Il tire en laisse</span>
-            <span className="text-green-700 font-medium">Arrete-toi, attends qu{"'"}il revienne</span>
+            <span className="text-green-700 font-medium">Arrête-toi, attends qu{"'"}il revienne</span>
           </div>
           <div className="bg-white rounded-xl p-3 flex justify-between">
             <span className="text-red-600 line-through">Il fixe un chien</span>
-            <span className="text-green-700 font-medium">Dis son nom, recompense le regard</span>
+            <span className="text-green-700 font-medium">Dis son nom, récompense le regard</span>
           </div>
           <div className="bg-white rounded-xl p-3 flex justify-between">
             <span className="text-red-600 line-through">Il grogne sur un visiteur</span>
-            <span className="text-green-700 font-medium">Emmene-le dans une autre piece + kong</span>
+            <span className="text-green-700 font-medium">Emmène-le dans une autre pièce + kong</span>
           </div>
           <div className="bg-white rounded-xl p-3 flex justify-between">
-            <span className="text-red-600 line-through">Il aboie sur la tele</span>
+            <span className="text-red-600 line-through">Il aboie sur la télé</span>
             <span className="text-green-700 font-medium">Mets en pause + redirige &quot;place&quot;</span>
           </div>
         </div>
@@ -119,102 +119,102 @@ export default function ReactivityPage() {
 
       {/* GUIDE : Signaux de stress */}
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-4">
-        <h2 className="font-bold text-amber-800 mb-2">Reconnaitre les signaux de stress</h2>
+        <h2 className="font-bold text-amber-800 mb-2">Reconnaître les signaux de stress</h2>
         <p className="text-sm text-amber-700 mb-2">
-          Ton chien te dit qu{"'"}il est mal AVANT d{"'"}exploser. Apprends a lire ces signaux :
+          Ton chien te dit qu{"'"}il est mal AVANT d{"'"}exploser. Apprends à lire ces signaux :
         </p>
         <div className="grid grid-cols-2 gap-2 text-sm">
           <div className="bg-white rounded-xl p-2">
-            <div className="font-semibold text-amber-800">Stress leger</div>
+            <div className="font-semibold text-amber-800">Stress léger</div>
             <ul className="text-amber-700 text-xs space-y-0.5 mt-1">
-              <li>Se leche les babines</li>
+              <li>Se lèche les babines</li>
               <li>Baille (hors fatigue)</li>
-              <li>Detourne la tete</li>
-              <li>Oreilles en arriere</li>
+              <li>Détourne la tête</li>
+              <li>Oreilles en arrière</li>
               <li>Queue basse</li>
             </ul>
           </div>
           <div className="bg-white rounded-xl p-2">
-            <div className="font-semibold text-red-800">Stress eleve</div>
+            <div className="font-semibold text-red-800">Stress élevé</div>
             <ul className="text-red-700 text-xs space-y-0.5 mt-1">
-              <li>Corps rigide / fige</li>
-              <li>Halete fort</li>
-              <li>Pupilles dilatees</li>
-              <li>Refuse les gateries</li>
-              <li>Poils du dos herisses</li>
+              <li>Corps rigide / figé</li>
+              <li>Halète fort</li>
+              <li>Pupilles dilatées</li>
+              <li>Refuse les gâteries</li>
+              <li>Poils du dos hérissés</li>
             </ul>
           </div>
         </div>
         <p className="text-xs text-amber-600 mt-2">
-          Des que tu vois un signal de stress leger : eloigne-toi du stimulus. N{"'"}attends pas l{"'"}explosion.
+          Dès que tu vois un signal de stress léger : éloigne-toi du stimulus. N{"'"}attends pas l{"'"}explosion.
         </p>
       </div>
 
       {/* GUIDE : Cas des 2 chiens ensemble */}
       <div className="bg-teal-50 border border-teal-200 rounded-2xl p-4 mb-4">
-        <h2 className="font-bold text-teal-800 mb-2">Gerer 2 chiens reactifs (meme portee)</h2>
+        <h2 className="font-bold text-teal-800 mb-2">Gérer 2 chiens réactifs (même portée)</h2>
         <p className="text-sm text-teal-700 mb-2">
-          Quand un chien declenche, l{"'"}autre amplifie. C{"'"}est la dynamique Thor + partenaire.
+          Quand un chien déclenche, l{"'"}autre amplifie. C{"'"}est la dynamique Thor + partenaire.
         </p>
         <ol className="list-decimal list-inside text-sm text-teal-700 space-y-1.5">
-          <li><strong>Travaille TOUJOURS d{"'"}abord avec Thor seul</strong> (le declencheur)</li>
-          <li><strong>Quand Thor est stable</strong> a un exercice, introduis l{"'"}autre chien</li>
+          <li><strong>Travaille TOUJOURS d{"'"}abord avec Thor seul</strong> (le déclencheur)</li>
+          <li><strong>Quand Thor est stable</strong> à un exercice, introduis l{"'"}autre chien</li>
           <li><strong>En duo</strong>, commence dans un environnement facile (maison)</li>
-          <li><strong>Si un des deux declenche</strong>, separe-les et reviens en solo</li>
-          <li><strong>Evite</strong> de les promener ensemble tant que chacun ne marche pas calmement seul</li>
+          <li><strong>Si un des deux déclenche</strong>, sépare-les et reviens en solo</li>
+          <li><strong>Évite</strong> de les promener ensemble tant que chacun ne marche pas calmement seul</li>
         </ol>
       </div>
 
       {/* GUIDE : Télévision et écrans */}
       <div className="bg-rose-50 border border-rose-200 rounded-2xl p-4 mb-4">
-        <h2 className="font-bold text-rose-800 mb-2">📺 Reagir a la television</h2>
+        <h2 className="font-bold text-rose-800 mb-2">📺 Réagir à la télévision</h2>
         <p className="text-sm text-rose-700 mb-3">
-          Les schnauzers ont un fort instinct de garde. Les animaux a l{"'"}ecran declenchent
-          le meme reflexe que les animaux reels. Voici comment gerer :
+          Les schnauzers ont un fort instinct de garde. Les animaux à l{"'"}écran déclenchent
+          le même réflexe que les animaux réels. Voici comment gérer :
         </p>
         <div className="space-y-2 text-sm text-rose-700">
           <div className="bg-white rounded-xl p-3">
-            <div className="font-semibold text-rose-800 mb-1">Pourquoi ils reagissent ?</div>
-            <p>Les chiens voient les ecrans modernes (60 Hz+). Les sons d{"'"}animaux declenchent l{"'"}instinct territorial.
-            En duo, Thor declenche et l{"'"}autre amplifie — c{"'"}est la tempete parfaite.</p>
+            <div className="font-semibold text-rose-800 mb-1">Pourquoi ils réagissent ?</div>
+            <p>Les chiens voient les écrans modernes (60 Hz+). Les sons d{"'"}animaux déclenchent l{"'"}instinct territorial.
+            En duo, Thor déclenche et l{"'"}autre amplifie — c{"'"}est la tempête parfaite.</p>
           </div>
           <div className="bg-white rounded-xl p-3">
-            <div className="font-semibold text-rose-800 mb-1">Gestes immediats</div>
+            <div className="font-semibold text-rose-800 mb-1">Gestes immédiats</div>
             <ul className="space-y-1 text-xs">
-              <li>🔇 <strong>Mute/Pause</strong> immediatement (ne crie pas &quot;NON&quot;)</li>
+              <li>🔇 <strong>Mute/Pause</strong> immédiatement (ne crie pas &quot;NON&quot;)</li>
               <li>🫱 Dis calmement &quot;[nom], place&quot; et pointe le tapis</li>
-              <li>🦴 Donne un Kong fourre congele AVANT de mettre la tele</li>
-              <li>📏 Eloigne le tapis a 3+ metres de l{"'"}ecran</li>
-              <li>🔊 Baisse le volume pendant les scenes avec animaux</li>
+              <li>🦴 Donne un Kong fourré congelé AVANT de mettre la télé</li>
+              <li>📏 Éloigne le tapis à 3+ mètres de l{"'"}écran</li>
+              <li>🔊 Baisse le volume pendant les scènes avec animaux</li>
             </ul>
           </div>
           <div className="bg-white rounded-xl p-3">
-            <div className="font-semibold text-rose-800 mb-1">Routine soiree tele</div>
+            <div className="font-semibold text-rose-800 mb-1">Routine soirée télé</div>
             <ol className="space-y-1 text-xs list-decimal list-inside">
               <li>30 min avant : session reniflage (fatiguer le cerveau)</li>
-              <li>15 min avant : Kong congele sur le tapis</li>
-              <li>Allumer la tele, volume modere</li>
-              <li>Recompenser le calme pendant les scenes intenses</li>
-              <li>Si explosion : pause, separer les chiens, reprendre en 10 min</li>
+              <li>15 min avant : Kong congelé sur le tapis</li>
+              <li>Allumer la télé, volume modéré</li>
+              <li>Récompenser le calme pendant les scènes intenses</li>
+              <li>Si explosion : pause, séparer les chiens, reprendre en 10 min</li>
             </ol>
           </div>
         </div>
         <p className="text-xs text-rose-600 mt-2">
-          Consulte les protocoles &quot;Television — Desensibilisation&quot; et &quot;Soiree tele&quot; pour le programme complet.
+          Consulte les protocoles &quot;Télévision — Désensibilisation&quot; et &quot;Soirée télé&quot; pour le programme complet.
         </p>
       </div>
 
-      {/* Principes cles */}
+      {/* Principes clés */}
       <div className="bg-blue-50 rounded-2xl p-4">
-        <p className="font-semibold text-blue-800 text-sm mb-2">Principes cles</p>
+        <p className="font-semibold text-blue-800 text-sm mb-2">Principes clés</p>
         <ul className="text-sm text-blue-700 space-y-1.5">
-          <li>Travailler SOUS le seuil de reaction</li>
-          <li>Recompenser AVANT que le chien reagisse</li>
-          <li>S{"'"}eloigner du stimulus si reaction</li>
+          <li>Travailler SOUS le seuil de réaction</li>
+          <li>Récompenser AVANT que le chien réagisse</li>
+          <li>S{"'"}éloigner du stimulus si réaction</li>
           <li>Sessions courtes et positives (3-5 min max)</li>
           <li>Jamais dire NON — proposer une alternative</li>
-          <li>Progresser : maison &gt; cour &gt; rue calme &gt; rue animee</li>
-          <li>Si le chien echoue 2 fois, reculer d{"'"}un niveau</li>
+          <li>Progresser : maison &gt; cour &gt; rue calme &gt; rue animée</li>
+          <li>Si le chien échoue 2 fois, reculer d{"'"}un niveau</li>
         </ul>
       </div>
     </div>
