@@ -18,6 +18,7 @@ export enum Trigger {
   CHAT = 'chat',
   VELO = 'velo',
   ENFANT = 'enfant',
+  TELEVISION = 'television',
   AUTRE = 'autre',
 }
 
@@ -235,6 +236,7 @@ export const TRIGGER_LABELS: Record<Trigger, string> = {
   [Trigger.CHAT]: 'Chat',
   [Trigger.VELO]: 'Vélo',
   [Trigger.ENFANT]: 'Enfant',
+  [Trigger.TELEVISION]: 'Télévision',
   [Trigger.AUTRE]: 'Autre',
 };
 

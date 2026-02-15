@@ -110,6 +110,10 @@ export default function ReactivityPage() {
             <span className="text-red-600 line-through">Il grogne sur un visiteur</span>
             <span className="text-green-700 font-medium">Emmene-le dans une autre piece + kong</span>
           </div>
+          <div className="bg-white rounded-xl p-3 flex justify-between">
+            <span className="text-red-600 line-through">Il aboie sur la tele</span>
+            <span className="text-green-700 font-medium">Mets en pause + redirige &quot;place&quot;</span>
+          </div>
         </div>
       </div>
 
@@ -159,6 +163,45 @@ export default function ReactivityPage() {
           <li><strong>Si un des deux declenche</strong>, separe-les et reviens en solo</li>
           <li><strong>Evite</strong> de les promener ensemble tant que chacun ne marche pas calmement seul</li>
         </ol>
+      </div>
+
+      {/* GUIDE : Télévision et écrans */}
+      <div className="bg-rose-50 border border-rose-200 rounded-2xl p-4 mb-4">
+        <h2 className="font-bold text-rose-800 mb-2">📺 Reagir a la television</h2>
+        <p className="text-sm text-rose-700 mb-3">
+          Les schnauzers ont un fort instinct de garde. Les animaux a l{"'"}ecran declenchent
+          le meme reflexe que les animaux reels. Voici comment gerer :
+        </p>
+        <div className="space-y-2 text-sm text-rose-700">
+          <div className="bg-white rounded-xl p-3">
+            <div className="font-semibold text-rose-800 mb-1">Pourquoi ils reagissent ?</div>
+            <p>Les chiens voient les ecrans modernes (60 Hz+). Les sons d{"'"}animaux declenchent l{"'"}instinct territorial.
+            En duo, Thor declenche et l{"'"}autre amplifie — c{"'"}est la tempete parfaite.</p>
+          </div>
+          <div className="bg-white rounded-xl p-3">
+            <div className="font-semibold text-rose-800 mb-1">Gestes immediats</div>
+            <ul className="space-y-1 text-xs">
+              <li>🔇 <strong>Mute/Pause</strong> immediatement (ne crie pas &quot;NON&quot;)</li>
+              <li>🫱 Dis calmement &quot;[nom], place&quot; et pointe le tapis</li>
+              <li>🦴 Donne un Kong fourre congele AVANT de mettre la tele</li>
+              <li>📏 Eloigne le tapis a 3+ metres de l{"'"}ecran</li>
+              <li>🔊 Baisse le volume pendant les scenes avec animaux</li>
+            </ul>
+          </div>
+          <div className="bg-white rounded-xl p-3">
+            <div className="font-semibold text-rose-800 mb-1">Routine soiree tele</div>
+            <ol className="space-y-1 text-xs list-decimal list-inside">
+              <li>30 min avant : session reniflage (fatiguer le cerveau)</li>
+              <li>15 min avant : Kong congele sur le tapis</li>
+              <li>Allumer la tele, volume modere</li>
+              <li>Recompenser le calme pendant les scenes intenses</li>
+              <li>Si explosion : pause, separer les chiens, reprendre en 10 min</li>
+            </ol>
+          </div>
+        </div>
+        <p className="text-xs text-rose-600 mt-2">
+          Consulte les protocoles &quot;Television — Desensibilisation&quot; et &quot;Soiree tele&quot; pour le programme complet.
+        </p>
       </div>
 
       {/* Principes cles */}

@@ -13,6 +13,7 @@ const SENSITIVITY_OPTIONS = [
   { value: Trigger.CHAT, label: 'Chats' },
   { value: Trigger.VELO, label: 'Vélos' },
   { value: Trigger.ENFANT, label: 'Enfants' },
+  { value: Trigger.TELEVISION, label: 'Télévision / Écrans' },
 ];
 
 const SKILL_OPTIONS = [

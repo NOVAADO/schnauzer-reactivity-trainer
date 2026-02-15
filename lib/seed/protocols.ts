@@ -60,6 +60,83 @@ export const PROTOCOLS: ReactivityProtocol[] = [
     ifReaction: 'Fais demi-tour immédiatement, sans tirer brusquement. Marche dans la direction opposée. Quand le chien se calme (bâillement, reniflage du sol), récompense. Prochaine fois, reste plus loin.',
     successCriteria: 'Le chien peut voir un autre chien à 15 mètres et te regarder quand tu dis son nom, sans réaction.',
   },
+  // ---- 4. TÉLÉVISION / ÉCRANS ----
+  {
+    id: 'television-desensibilisation',
+    name: 'Télévision — Désensibilisation aux écrans',
+    context: Context.MAISON,
+    description:
+      'Protocole progressif pour les chiens qui réagissent aux animaux, sonnettes, ou bruits à la télévision. Très courant chez les schnauzers qui ont un instinct de garde prononcé.',
+    steps: [
+      {
+        instruction: 'PRÉPARATION : Installe le tapis/place du chien à 3+ mètres de la télé. Prépare un sac de gâteries haute valeur et un Kong fourré.',
+        tip: 'La distance est ta meilleure amie. Plus le chien est loin de l\'écran, moins le stimulus est intense.',
+      },
+      {
+        instruction: 'ÉTAPE 1 — SON SEULEMENT : Mets la télé avec l\'image éteinte (ou écran caché). Volume au minimum. Récompense chaque seconde de calme.',
+        tip: 'Les schnauzers réagissent souvent au SON avant l\'image. Commence par désensibiliser le son.',
+      },
+      {
+        instruction: 'Monte le volume TRÈS graduellement (1 cran à la fois). Si le chien reste calme : gâterie. S\'il lève la tête : OK. S\'il se lève ou grogne : baisse le volume.',
+      },
+      {
+        instruction: 'ÉTAPE 2 — IMAGE + SON BAS : Allume l\'image, volume bas. Choisis un programme CALME (pas d\'animaux au début). Récompense le calme toutes les 10 secondes.',
+      },
+      {
+        instruction: 'ÉTAPE 3 — CONTENU DÉCLENCHEUR : Mets une vidéo YouTube d\'animaux (chiens, chats, oiseaux). Volume bas. Le chien est sur son tapis à distance.',
+        tip: 'Cherche "dogs barking TV" ou "cats on screen" sur YouTube. Tu contrôles exactement ce qui passe.',
+      },
+      {
+        instruction: 'Quand un animal apparaît : DIS SON NOM avant qu\'il réagisse. S\'il te regarde au lieu de la télé : JACKPOT de gâteries.',
+      },
+      {
+        instruction: 'S\'il réagit (aboie, se lève, court vers la télé) : ÉTEINS la télé calmement. Attends 30 secondes de calme. Recommence à un niveau plus facile.',
+        tip: 'Ne crie PAS "non" ou "arrête". Éteindre = le stimulus disparaît. Le chien apprend que réagir fait partir la chose intéressante.',
+      },
+      {
+        instruction: 'ÉTAPE 4 — FILM/SÉRIE : Quand les étapes précédentes sont acquises (2+ semaines), essaie un vrai film. Garde les gâteries à portée. Récompense le calme pendant les scènes d\'animaux.',
+      },
+    ],
+    ifReaction: 'Éteins immédiatement la télé sans réagir. Pas de "non", pas de correction. Attends que le chien se recouche, soupire, ou bâille. Rallume à volume plus bas. Si ça arrive 3 fois dans une session, c\'est trop difficile — reste au niveau précédent pendant 3 jours.',
+    successCriteria: 'Le chien peut regarder une émission avec des animaux pendant 15 minutes en restant sur son tapis, avec seulement des regards curieux (pas de réaction vocale ou physique).',
+  },
+
+  // ---- 5. SOIRÉE TÉLÉ — ROUTINE DE GESTION ----
+  {
+    id: 'soiree-tele-routine',
+    name: 'Soirée télé — Routine anti-réactivité',
+    context: Context.MAISON,
+    description:
+      'Protocole pratique pour les soirées film/série. Comment préparer les chiens AVANT d\'allumer la télé pour une soirée calme.',
+    steps: [
+      {
+        instruction: '30 MIN AVANT : Fais une session de reniflage (tapis de reniflage ou jeu "cherche !"). Le but est de fatiguer le cerveau.',
+        tip: 'Un chien qui a reniflé 15 minutes est beaucoup plus calme devant la télé.',
+      },
+      {
+        instruction: '15 MIN AVANT : Prépare et donne un Kong fourré congelé à CHAQUE chien, sur leur tapis respectif.',
+      },
+      {
+        instruction: 'INSTALLATION : Les chiens sont sur leurs tapis avec les Kongs. Allume la télé à volume modéré.',
+      },
+      {
+        instruction: 'PENDANT LE FILM : Garde un petit sac de gâteries à côté de toi. Récompense SILENCIEUSEMENT le calme de temps en temps (lance une gâterie sur le tapis sans parler).',
+        tip: 'Si Thor est le déclencheur, surveille-le en priorité. Récompense-le quand il est couché, surtout pendant les scènes avec animaux.',
+      },
+      {
+        instruction: 'SI UN CHIEN S\'AGITE : Dis calmement "[nom], place" et pointe le tapis. Quand il y retourne : gâterie.',
+      },
+      {
+        instruction: 'SI EXPLOSION (aboiements intenses) : Mets la télé en pause. Emmène le chien dans une autre pièce calme avec un os à mâcher. Reprends dans 10 min.',
+        tip: 'Si les deux réagissent : sépare-les. L\'effet duo amplifie toujours la réaction.',
+      },
+      {
+        instruction: 'ASTUCE LONGUE DURÉE : Baisse le volume pendant les scènes d\'action/animaux. Les schnauzers réagissent autant au son qu\'à l\'image.',
+      },
+    ],
+    ifReaction: 'Si un chien aboie à la télé : pause/mute immédiat. Pas de "CHUT" ou de punition. Redirige vers le tapis, récompense le calme, puis reprends. Si ça arrive plus de 3 fois par soirée, retourne au protocole de désensibilisation.',
+    successCriteria: 'Soirée film complète (1h30+) sans que les chiens réagissent aux sons/images de la télé.',
+  },
 ];
 
 export function getProtocolById(id: string): ReactivityProtocol | undefined {
