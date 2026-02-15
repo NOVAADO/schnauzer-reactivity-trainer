@@ -15,6 +15,19 @@ class SchnauzDB extends Dexie {
       incidents: '++id, dogId, date, context, trigger, intensity',
       careEntries: '++id, dogId, careTaskId, date',
     });
+    // v2: ajoute masteredSkills aux chiens existants
+    this.version(2).stores({
+      dogs: '++id, name, isTriggerDog',
+      sessions: '++id, dogId, exerciseId, date, result',
+      incidents: '++id, dogId, date, context, trigger, intensity',
+      careEntries: '++id, dogId, careTaskId, date',
+    }).upgrade((tx) => {
+      return tx.table('dogs').toCollection().modify((dog) => {
+        if (!dog.masteredSkills) {
+          dog.masteredSkills = [];
+        }
+      });
+    });
   }
 }
 

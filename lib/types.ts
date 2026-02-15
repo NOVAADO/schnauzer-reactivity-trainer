@@ -95,6 +95,7 @@ export interface Dog {
   particularities: string;
   isTriggerDog: boolean;
   sensitivities: Trigger[];
+  masteredSkills: string[]; // ids d'exercices/tricks déjà acquis
   mainObjective: string;
   createdAt: string;
 }

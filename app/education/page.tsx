@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { EXERCISES } from '@/lib/seed/exercises';
+import { useDogs } from '@/lib/hooks';
 import { ExerciseCategory, ACTIVATION_EMOJIS, CONTEXT_LABELS, EnvironmentLevel } from '@/lib/types';
 
 const CATEGORY_INFO: Record<ExerciseCategory, { label: string; icon: string }> = {
@@ -21,6 +22,8 @@ const ENV_LABELS: Record<number, string> = {
 };
 
 export default function EducationPage() {
+  const dogs = useDogs();
+  const masteredSkills = new Set(dogs.flatMap((d) => d.masteredSkills || []));
   const categories = Object.values(ExerciseCategory);
 
   return (
@@ -51,26 +54,32 @@ export default function EducationPage() {
               <span>{info.icon}</span> {info.label}
             </h2>
             <div className="flex flex-col gap-2">
-              {exercises.map((ex) => (
-                <Link key={ex.id} href={`/education/${ex.id}`}>
-                  <div className="bg-white rounded-2xl p-4 border border-gray-100 active:bg-gray-50 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <div className="font-semibold">{ex.name}</div>
-                        <div className="text-sm text-gray-500 mt-0.5 flex items-center gap-2">
-                          <span>{ex.durationMinutes} min</span>
-                          <span>·</span>
-                          <span>{ENV_LABELS[ex.environmentLevel]}</span>
+              {exercises.map((ex) => {
+                const isMastered = masteredSkills.has(ex.id);
+                return (
+                  <Link key={ex.id} href={`/education/${ex.id}`}>
+                    <div className={`bg-white rounded-2xl p-4 border active:bg-gray-50 transition-colors ${isMastered ? 'border-green-200' : 'border-gray-100'}`}>
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className="font-semibold">{ex.name}</span>
+                            {isMastered && <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full">Acquis ✓</span>}
+                          </div>
+                          <div className="text-sm text-gray-500 mt-0.5 flex items-center gap-2">
+                            <span>{ex.durationMinutes} min</span>
+                            <span>·</span>
+                            <span>{ENV_LABELS[ex.environmentLevel]}</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <span className="text-lg">{ACTIVATION_EMOJIS[ex.maxActivation]}</span>
+                          <span className="text-xs text-gray-400">max {ex.maxActivation}</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-center">
-                        <span className="text-lg">{ACTIVATION_EMOJIS[ex.maxActivation]}</span>
-                        <span className="text-xs text-gray-400">max {ex.maxActivation}</span>
-                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         );

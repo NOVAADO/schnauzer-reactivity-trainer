@@ -15,6 +15,18 @@ const SENSITIVITY_OPTIONS = [
   { value: Trigger.ENFANT, label: 'Enfants' },
 ];
 
+const SKILL_OPTIONS = [
+  { id: 'assis-base', label: 'Assis' },
+  { id: 'couche-base', label: 'Couché' },
+  { id: 'reste-base', label: 'Reste' },
+  { id: 'regard-base', label: 'Regard / Contact visuel' },
+  { id: 'trick-touche', label: 'Touche (nez dans la main)' },
+  { id: 'trick-donne-patte', label: 'Donne la patte' },
+  { id: 'trick-tourne', label: 'Tourne / Pirouette' },
+  { id: 'place-tapis', label: 'Place / Va au tapis' },
+  { id: 'marche-exploratoire', label: 'Marche en laisse' },
+];
+
 interface DogForm {
   name: string;
   age: string;
@@ -22,16 +34,18 @@ interface DogForm {
   particularities: string;
   isTriggerDog: boolean;
   sensitivities: Trigger[];
+  masteredSkills: string[];
   mainObjective: string;
 }
 
 const emptyDog: DogForm = {
   name: '',
-  age: '',
-  weight: '',
+  age: '31',
+  weight: '8',
   particularities: '',
   isTriggerDog: false,
   sensitivities: [],
+  masteredSkills: [],
   mainObjective: '',
 };
 
@@ -39,8 +53,8 @@ export default function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [dogs, setDogs] = useState<DogForm[]>([
-    { ...emptyDog, name: 'Thor', isTriggerDog: true },
-    { ...emptyDog },
+    { ...emptyDog, name: 'Thor', isTriggerDog: true, masteredSkills: ['assis-base', 'trick-touche', 'trick-donne-patte'] },
+    { ...emptyDog, name: 'Loki', masteredSkills: ['assis-base', 'trick-touche', 'trick-donne-patte'] },
   ]);
 
   const currentDog = dogs[step < 2 ? step : 0];
@@ -57,6 +71,14 @@ export default function OnboardingPage() {
     updateDog(index, { sensitivities: updated });
   }
 
+  function toggleSkill(index: number, skillId: string) {
+    const current = dogs[index].masteredSkills;
+    const updated = current.includes(skillId)
+      ? current.filter((s) => s !== skillId)
+      : [...current, skillId];
+    updateDog(index, { masteredSkills: updated });
+  }
+
   async function handleFinish() {
     for (const dog of dogs) {
       if (!dog.name.trim()) continue;
@@ -67,6 +89,7 @@ export default function OnboardingPage() {
         particularities: dog.particularities,
         isTriggerDog: dog.isTriggerDog,
         sensitivities: dog.sensitivities,
+        masteredSkills: dog.masteredSkills,
         mainObjective: dog.mainObjective || 'Réduire la réactivité',
         createdAt: nowISO(),
       });
@@ -157,6 +180,29 @@ export default function OnboardingPage() {
           </div>
 
           <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Commandes déjà acquises</label>
+            <div className="flex flex-wrap gap-2">
+              {SKILL_OPTIONS.map((opt) => {
+                const selected = dog.masteredSkills.includes(opt.id);
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => toggleSkill(i, opt.id)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selected
+                        ? 'bg-green-600 text-white'
+                        : 'bg-gray-100 text-gray-700'
+                    }`}
+                  >
+                    {selected ? '✓ ' : ''}{opt.label}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-xs text-gray-400 mt-1">Sélectionne ce que ce chien sait déjà faire</p>
+          </div>
+
+          <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Objectif principal</label>
             <input
               type="text"
@@ -215,6 +261,18 @@ export default function OnboardingPage() {
                     {TRIGGER_LABELS[s]}
                   </span>
                 ))}
+              </div>
+            )}
+            {dog.masteredSkills.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {dog.masteredSkills.map((skillId) => {
+                  const skill = SKILL_OPTIONS.find((o) => o.id === skillId);
+                  return (
+                    <span key={skillId} className="px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs">
+                      ✓ {skill?.label || skillId}
+                    </span>
+                  );
+                })}
               </div>
             )}
           </div>

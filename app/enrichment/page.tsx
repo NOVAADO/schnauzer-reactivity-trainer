@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ENRICHMENT_ACTIVITIES } from '@/lib/seed/enrichment';
 import { EXERCISES } from '@/lib/seed/exercises';
-import { useTodaySessions } from '@/lib/hooks';
+import { useDogs } from '@/lib/hooks';
 import { EnrichmentCategory } from '@/lib/types';
 
 const CATEGORY_INFO: Record<EnrichmentCategory, { label: string; icon: string; color: string; description: string }> = {
@@ -66,8 +66,9 @@ function getPrerequisiteName(prerequisiteId: string): string {
 }
 
 export default function EnrichmentPage() {
-  const todaySessions = useTodaySessions();
-  const completedExerciseIds = new Set(todaySessions.map((s) => s.exerciseId));
+  const dogs = useDogs();
+  // Combine mastered skills from all dogs
+  const masteredSkills = new Set(dogs.flatMap((d) => d.masteredSkills || []));
 
   const categories = Object.values(EnrichmentCategory);
 
@@ -113,7 +114,7 @@ export default function EnrichmentPage() {
 
             <div className="flex flex-col gap-2">
               {activities.map((activity) => {
-                const unlocked = isPrerequisiteMet(activity.prerequisite, completedExerciseIds);
+                const unlocked = isPrerequisiteMet(activity.prerequisite, masteredSkills);
 
                 return (
                   <Link key={activity.id} href={`/enrichment/${activity.id}`}>
