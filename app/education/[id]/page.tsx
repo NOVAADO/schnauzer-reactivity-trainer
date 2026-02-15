@@ -264,7 +264,7 @@ export default function ExerciseSessionPage() {
   return (
     <div className="py-4">
       <div className="text-center mb-6">
-        <span className="text-5xl">&#127881;</span>
+        <span className="text-5xl">🎉</span>
         <h1 className="text-xl font-bold mt-3">Session terminee !</h1>
         <p className="text-gray-500 text-sm mt-1">{exercise.name}</p>
         {sessionStartTime > 0 && (

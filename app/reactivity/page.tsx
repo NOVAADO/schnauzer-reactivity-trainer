@@ -6,10 +6,10 @@ import { useTodayIncidents } from '@/lib/hooks';
 import { Context } from '@/lib/types';
 
 const CONTEXT_ICONS: Record<string, string> = {
-  [Context.COUR]: '&#127793;',
-  [Context.MAISON]: '&#127968;',
-  [Context.RUE_CALME]: '&#128692;',
-  [Context.RUE_STIMULANTE]: '&#127961;',
+  [Context.COUR]: '🌱',
+  [Context.MAISON]: '🏠',
+  [Context.RUE_CALME]: '🚴',
+  [Context.RUE_STIMULANTE]: '🏙',
 };
 
 export default function ReactivityPage() {
@@ -24,7 +24,7 @@ export default function ReactivityPage() {
       <Link href="/reactivity/incident">
         <div className="bg-red-50 border border-red-200 rounded-2xl p-4 mb-4 active:bg-red-100 transition-colors">
           <div className="flex items-center gap-3">
-            <span className="text-3xl">&#128221;</span>
+            <span className="text-3xl">📝</span>
             <div>
               <div className="font-semibold text-red-800">Noter un incident</div>
               <div className="text-sm text-red-600">Rapide — 10 secondes</div>
@@ -48,7 +48,7 @@ export default function ReactivityPage() {
           <Link key={protocol.id} href={`/reactivity/${protocol.id}`}>
             <div className="bg-white rounded-2xl p-4 border border-gray-100 active:bg-gray-50 transition-colors">
               <div className="flex items-center gap-3">
-                <span className="text-2xl" dangerouslySetInnerHTML={{ __html: CONTEXT_ICONS[protocol.context] || '&#128062;' }} />
+                <span className="text-2xl">{CONTEXT_ICONS[protocol.context] || '🐾'}</span>
                 <div>
                   <div className="font-semibold">{protocol.name}</div>
                   <div className="text-sm text-gray-500 mt-0.5">{protocol.description.slice(0, 70)}...</div>

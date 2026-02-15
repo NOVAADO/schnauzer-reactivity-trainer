@@ -61,7 +61,7 @@ export default function IncidentPage() {
   if (saved) {
     return (
       <div className="py-16 text-center">
-        <span className="text-5xl">&#9989;</span>
+        <span className="text-5xl">✅</span>
         <p className="text-lg font-semibold mt-4">Incident enregistre !</p>
       </div>
     );
@@ -70,7 +70,7 @@ export default function IncidentPage() {
   return (
     <div className="py-4">
       <button onClick={() => router.back()} className="text-blue-600 text-sm mb-4">
-        &#8592; Retour
+        ← Retour
       </button>
 
       <h1 className="text-xl font-bold mb-1">Noter un incident</h1>
@@ -89,7 +89,7 @@ export default function IncidentPage() {
                   dogId === dog.id ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
                 }`}
               >
-                {dog.isTriggerDog ? '&#9889; ' : ''}{dog.name}
+                {dog.isTriggerDog ? '⚡ ' : ''}{dog.name}
               </button>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function IncidentPage() {
                     : 'border-gray-200'
                 }`}
               >
-                {o === Outcome.MIEUX ? '&#128077;' : o === Outcome.PAREIL ? '&#128528;' : '&#128078;'}{' '}
+                {o === Outcome.MIEUX ? '👍' : o === Outcome.PAREIL ? '😐' : '👎'}{' '}
                 {OUTCOME_LABELS[o]}
               </button>
             ))}

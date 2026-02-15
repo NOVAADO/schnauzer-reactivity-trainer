@@ -114,7 +114,7 @@ export default function EnrichmentDetailPage() {
         <span className="text-6xl block mb-4">🎉</span>
         <h1 className="text-2xl font-bold mb-2">Bravo !</h1>
         <p className="text-gray-600 mb-2">
-          Activite &laquo; {activity.name} &raquo; terminee !
+          Activite « {activity.name} » terminee !
         </p>
         <p className="text-sm text-gray-500 mb-6">
           Chaque repetition renforce l{"'"}apprentissage. Reviens demain !
@@ -126,7 +126,7 @@ export default function EnrichmentDetailPage() {
           <ul className="text-sm text-green-700 space-y-1">
             {activity.benefits.map((b, i) => (
               <li key={i} className="flex gap-2">
-                <span className="text-green-500 flex-shrink-0">&#10003;</span>
+                <span className="text-green-500 flex-shrink-0">✓</span>
                 <span>{b}</span>
               </li>
             ))}
@@ -167,7 +167,7 @@ export default function EnrichmentDetailPage() {
     return (
       <div className="py-4">
         <button onClick={() => router.back()} className="text-blue-600 text-sm mb-4">
-          &#8592; Retour
+          ← Retour
         </button>
 
         <h1 className="text-xl font-bold mb-1">{activity.name}</h1>
@@ -199,7 +199,7 @@ export default function EnrichmentDetailPage() {
                     }`}
                   >
                     {materialsChecked.has(i) && (
-                      <span className="text-white text-sm">&#10003;</span>
+                      <span className="text-white text-sm">✓</span>
                     )}
                   </div>
                   <span className={`text-sm ${materialsChecked.has(i) ? 'text-gray-400 line-through' : 'text-amber-800'}`}>
@@ -223,7 +223,7 @@ export default function EnrichmentDetailPage() {
                   dogId === dog.id ? 'border-purple-500 bg-purple-50' : 'border-gray-200'
                 }`}
               >
-                {dog.isTriggerDog ? '&#9889; ' : ''}{dog.name}
+                {dog.isTriggerDog ? '⚡ ' : ''}{dog.name}
               </button>
             ))}
           </div>
@@ -235,7 +235,7 @@ export default function EnrichmentDetailPage() {
           <ul className="text-sm text-green-700 space-y-1">
             {activity.benefits.map((b, i) => (
               <li key={i} className="flex gap-2">
-                <span className="text-green-500 flex-shrink-0">&#10003;</span>
+                <span className="text-green-500 flex-shrink-0">✓</span>
                 <span>{b}</span>
               </li>
             ))}
@@ -306,12 +306,12 @@ export default function EnrichmentDetailPage() {
               onClick={startStepTimer}
               className="px-6 py-3 bg-purple-100 text-purple-700 rounded-xl font-medium text-sm"
             >
-              &#9202; Lancer le chrono ({step.durationSeconds}s)
+              ⏲ Lancer le chrono ({step.durationSeconds}s)
             </button>
           ) : (
             <div>
               <div className="text-4xl font-bold text-purple-700 mb-2">
-                {timeRemaining > 0 ? timeRemaining : '&#10003;'}
+                {timeRemaining > 0 ? timeRemaining : '✓'}
               </div>
               <div className="text-sm text-gray-500">
                 {timeRemaining > 0 ? 'secondes restantes' : 'Temps ecoule !'}
@@ -348,7 +348,7 @@ export default function EnrichmentDetailPage() {
               : 'border-2 border-purple-500 text-purple-600 active:bg-purple-50'
           }`}
         >
-          &#8592; Precedent
+          ← Precedent
         </button>
         <button
           onClick={handleNextStep}

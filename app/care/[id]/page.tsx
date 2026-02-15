@@ -74,7 +74,7 @@ export default function CareDetailPage() {
   if (saved) {
     return (
       <div className="py-16 text-center">
-        <span className="text-5xl">&#9989;</span>
+        <span className="text-5xl">✅</span>
         <p className="text-lg font-semibold mt-4">Soin enregistre !</p>
         <p className="text-sm text-gray-500 mt-1">Bravo, chaque petite etape compte.</p>
       </div>
@@ -87,7 +87,7 @@ export default function CareDetailPage() {
   return (
     <div className="py-4">
       <button onClick={() => router.back()} className="text-blue-600 text-sm mb-4">
-        &#8592; Retour
+        ← Retour
       </button>
 
       <h1 className="text-xl font-bold mb-1">{task.name}</h1>
@@ -119,7 +119,7 @@ export default function CareDetailPage() {
               dogId === dog.id ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
             }`}
           >
-            {dog.isTriggerDog ? '&#9889; ' : ''}{dog.name}
+            {dog.isTriggerDog ? '⚡ ' : ''}{dog.name}
           </button>
         ))}
       </div>
@@ -142,7 +142,7 @@ export default function CareDetailPage() {
                   : 'bg-gray-100 text-gray-500'
               }`}
             >
-              {i <= lastStepDone ? '&#10003;' : (s.day ?? i + 1)}
+              {i <= lastStepDone ? '✓' : (s.day ?? i + 1)}
             </button>
           ))}
         </div>
@@ -187,7 +187,7 @@ export default function CareDetailPage() {
                   : 'border-gray-200'
               }`}
             >
-              <div className="text-lg">{n <= 2 ? '&#128543;' : n === 3 ? '&#128528;' : n === 4 ? '&#128578;' : '&#128516;'}</div>
+              <div className="text-lg">{n <= 2 ? '😟' : n === 3 ? '😐' : n === 4 ? '🙂' : '😄'}</div>
               <div className="text-xs text-gray-500 mt-0.5">
                 {n === 1 ? 'Panique' : n === 2 ? 'Inconfort' : n === 3 ? 'Neutre' : n === 4 ? 'OK' : 'Adore'}
               </div>
