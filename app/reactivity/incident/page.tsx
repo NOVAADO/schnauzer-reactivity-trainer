@@ -10,13 +10,13 @@ import { todayStr, nowISO } from '@/lib/utils';
 const QUICK_ACTIONS = [
   'Place / tapis',
   'Regard / attention',
-  'Eloignement',
+  'Éloignement',
   'Demi-tour',
   'Redirection jouet',
-  'Rentre a la maison',
+  'Rentre à la maison',
   'Ignore',
   'Assis / couche',
-  'Tapis de lechage',
+  'Tapis de léchage',
 ];
 
 export default function IncidentPage() {
@@ -42,7 +42,7 @@ export default function IncidentPage() {
   }, [dogs, dogId]);
 
   async function handleSave() {
-    const finalAction = action === 'Autre' ? customAction : action || 'Non specifie';
+    const finalAction = action === 'Autre' ? customAction : action || 'Non spécifié';
     await addIncident({
       dogId,
       context,
@@ -62,7 +62,7 @@ export default function IncidentPage() {
     return (
       <div className="py-16 text-center">
         <span className="text-5xl">✅</span>
-        <p className="text-lg font-semibold mt-4">Incident enregistre !</p>
+        <p className="text-lg font-semibold mt-4">Incident enregistré !</p>
       </div>
     );
   }
@@ -97,7 +97,7 @@ export default function IncidentPage() {
 
         {/* Context */}
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">Ou ?</label>
+          <label className="text-sm font-medium text-gray-700 mb-2 block">Où ?</label>
           <div className="grid grid-cols-2 gap-2">
             {Object.values(Context).map((c) => (
               <button
@@ -115,7 +115,7 @@ export default function IncidentPage() {
 
         {/* Trigger */}
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">Declencheur ?</label>
+          <label className="text-sm font-medium text-gray-700 mb-2 block">Déclencheur ?</label>
           <div className="flex flex-wrap gap-2">
             {Object.values(Trigger).map((t) => (
               <button
@@ -134,7 +134,7 @@ export default function IncidentPage() {
         {/* Intensity */}
         <div>
           <label className="text-sm font-medium text-gray-700 mb-2 block">
-            Intensite : <strong>{intensity}/5</strong>
+            Intensité : <strong>{intensity}/5</strong>
           </label>
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map((n) => (
@@ -156,7 +156,7 @@ export default function IncidentPage() {
             ))}
           </div>
           <div className="flex justify-between text-xs text-gray-400 mt-1 px-1">
-            <span>Leger</span>
+            <span>Léger</span>
             <span>Moyen</span>
             <span>Explosion</span>
           </div>
@@ -183,7 +183,7 @@ export default function IncidentPage() {
               type="text"
               value={customAction}
               onChange={(e) => setCustomAction(e.target.value)}
-              placeholder="Decris ton action..."
+              placeholder="Décris ton action..."
               className="w-full mt-2 p-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           )}
@@ -191,7 +191,7 @@ export default function IncidentPage() {
 
         {/* Outcome */}
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">Resultat ?</label>
+          <label className="text-sm font-medium text-gray-700 mb-2 block">Résultat ?</label>
           <div className="grid grid-cols-3 gap-2">
             {Object.values(Outcome).map((o) => (
               <button
@@ -220,7 +220,7 @@ export default function IncidentPage() {
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            placeholder="Ex : Le camion de poubelle est passe, Thor a declenche puis Loki a amplifie"
+            placeholder="Ex : Le camion de poubelle est passé, Thor a déclenché puis Loki a amplifié"
             rows={2}
             className="w-full p-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

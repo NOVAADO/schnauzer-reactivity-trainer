@@ -99,10 +99,10 @@ export default function ExerciseSessionPage() {
         {/* Warning if last session failed */}
         {lastFailed && (
           <div className="bg-yellow-50 border border-yellow-300 rounded-2xl p-4 mb-4">
-            <p className="font-semibold text-yellow-800 text-sm">⚠️ La derniere session etait difficile</p>
+            <p className="font-semibold text-yellow-800 text-sm">⚠️ La dernière session était difficile</p>
             <p className="text-sm text-yellow-700 mt-1">{exercise.ifItFails}</p>
             <p className="text-xs text-yellow-600 mt-2">
-              Essaie un environnement plus calme ou reduis la duree.
+              Essaie un environnement plus calme ou réduis la durée.
             </p>
           </div>
         )}
@@ -136,10 +136,10 @@ export default function ExerciseSessionPage() {
 
           {isBlocked && !showCalm && (
             <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4">
-              <p className="font-semibold text-orange-800">Activation trop elevee</p>
+              <p className="font-semibold text-orange-800">Activation trop élevée</p>
               <p className="text-sm text-orange-700 mt-1">
-                Cet exercice necessite une activation de {exercise.maxActivation} max.
-                Ton chien est a {activation} — il n{"'"}est pas en etat d{"'"}apprendre.
+                Cet exercice nécessite une activation de {exercise.maxActivation} max.
+                Ton chien est à {activation} — il n{"'"}est pas en état d{"'"}apprendre.
               </p>
               <button
                 onClick={() => setShowCalm(true)}
@@ -154,21 +154,21 @@ export default function ExerciseSessionPage() {
             <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
               <p className="font-semibold text-green-800 mb-3">Routine de retour au calme</p>
               <ol className="list-decimal list-inside text-sm text-green-700 space-y-2">
-                <li><strong>Eloigne les stimuli</strong> — ferme la porte, la fenetre, eteins la TV</li>
-                <li><strong>Baisse TON energie</strong> — parle doucement, bouge lentement</li>
-                <li><strong>Propose un exutoire calme</strong> — tapis de lechage, kong fourre, os a macher</li>
+                <li><strong>Éloigne les stimuli</strong> — ferme la porte, la fenêtre, éteins la TV</li>
+                <li><strong>Baisse TON énergie</strong> — parle doucement, bouge lentement</li>
+                <li><strong>Propose un exutoire calme</strong> — tapis de léchage, kong fourré, os à mâcher</li>
                 <li><strong>Ignore le chien</strong> — ne le touche pas, ne lui parle pas pendant 5 min</li>
                 <li><strong>Attends les signaux de calme</strong> — baillement, soupir, couche volontaire</li>
-                <li><strong>Recompense le calme</strong> — pose doucement une gaterie devant lui</li>
+                <li><strong>Récompense le calme</strong> — pose doucement une gâterie devant lui</li>
               </ol>
               <div className="mt-3 bg-green-100 rounded-xl p-3 text-xs text-green-800">
-                Le reniflage, le lechage et la mastication liberent des endorphines qui calment naturellement le chien. Un tapis de lechage avec du beurre d{"'"}arachide est super efficace.
+                Le reniflage, le léchage et la mastication libèrent des endorphines qui calment naturellement le chien. Un tapis de léchage avec du beurre d{"'"}arachide est super efficace.
               </div>
               <button
                 onClick={() => { setShowCalm(false); setActivation(2); }}
                 className="mt-3 w-full p-3 bg-green-200 text-green-800 rounded-xl font-semibold"
               >
-                C{"'"}est mieux, reevaluer
+                C{"'"}est mieux, réévaluer
               </button>
             </div>
           )}
@@ -195,7 +195,7 @@ export default function ExerciseSessionPage() {
       <div className="py-4">
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm text-gray-500">
-            Etape {currentStep + 1} / {exercise.steps.length}
+            Étape {currentStep + 1} / {exercise.steps.length}
           </span>
           <span className="text-sm text-gray-400">{exercise.name}</span>
         </div>
@@ -237,14 +237,14 @@ export default function ExerciseSessionPage() {
             }}
             className="w-full p-4 bg-blue-600 text-white rounded-xl text-lg font-semibold active:bg-blue-700"
           >
-            {isLast ? 'Terminer' : 'Etape suivante'}
+            {isLast ? 'Terminer' : 'Étape suivante'}
           </button>
 
           <button
             onClick={() => setPhase('result')}
             className="w-full p-3 bg-red-50 text-red-600 rounded-xl text-sm font-medium"
           >
-            Arreter — le chien est stresse
+            Arrêter — le chien est stressé
           </button>
 
           {currentStep > 0 && (
@@ -252,7 +252,7 @@ export default function ExerciseSessionPage() {
               onClick={() => setCurrentStep((s) => s - 1)}
               className="w-full p-3 text-gray-500 text-sm"
             >
-              Etape precedente
+              Étape précédente
             </button>
           )}
         </div>
@@ -265,11 +265,11 @@ export default function ExerciseSessionPage() {
     <div className="py-4">
       <div className="text-center mb-6">
         <span className="text-5xl">🎉</span>
-        <h1 className="text-xl font-bold mt-3">Session terminee !</h1>
+        <h1 className="text-xl font-bold mt-3">Session terminée !</h1>
         <p className="text-gray-500 text-sm mt-1">{exercise.name}</p>
         {sessionStartTime > 0 && (
           <p className="text-gray-400 text-xs mt-1">
-            Duree : {formatDuration(Math.floor((Date.now() - sessionStartTime) / 1000))}
+            Durée : {formatDuration(Math.floor((Date.now() - sessionStartTime) / 1000))}
           </p>
         )}
       </div>
@@ -278,29 +278,29 @@ export default function ExerciseSessionPage() {
         <ActivationBarometer
           value={activationAfter}
           onChange={setActivationAfter}
-          label="Activation du chien APRES la session"
+          label="Activation du chien APRÈS la session"
         />
       </div>
 
       <div className="bg-white rounded-2xl p-4 border border-gray-100 mb-4">
-        <p className="font-semibold mb-1">Critere de reussite :</p>
+        <p className="font-semibold mb-1">Critère de réussite :</p>
         <p className="text-sm text-gray-600">{exercise.successCriteria}</p>
       </div>
 
-      <p className="font-semibold text-center mb-3">Comment ca s{"'"}est passe ?</p>
+      <p className="font-semibold text-center mb-3">Comment ça s{"'"}est passé ?</p>
 
       <div className="flex flex-col gap-3">
         <button
           onClick={() => saveResult(SessionResult.REUSSI)}
           className="w-full p-4 bg-green-500 text-white rounded-xl text-lg font-semibold active:bg-green-600"
         >
-          Reussi — Le chien a compris
+          Réussi — Le chien a compris
         </button>
         <button
           onClick={() => saveResult(SessionResult.TROP_DIFFICILE)}
           className="w-full p-4 bg-yellow-500 text-white rounded-xl text-lg font-semibold active:bg-yellow-600"
         >
-          Trop difficile — A simplifier
+          Trop difficile — À simplifier
         </button>
         <button
           onClick={() => saveResult(SessionResult.STRESS)}
@@ -311,12 +311,12 @@ export default function ExerciseSessionPage() {
       </div>
 
       <div className="mt-6 bg-yellow-50 rounded-2xl p-4">
-        <p className="font-semibold text-yellow-800 text-sm">Si ca n{"'"}a pas marche :</p>
+        <p className="font-semibold text-yellow-800 text-sm">Si ça n{"'"}a pas marché :</p>
         <p className="text-sm text-yellow-700 mt-1">{exercise.ifItFails}</p>
       </div>
 
       <div className="mt-3 bg-gray-50 rounded-2xl p-4">
-        <p className="font-semibold text-gray-700 text-sm mb-2">Erreurs frequentes :</p>
+        <p className="font-semibold text-gray-700 text-sm mb-2">Erreurs fréquentes :</p>
         <ul className="text-sm text-gray-600 space-y-1">
           {exercise.commonMistakes.map((m, i) => (
             <li key={i}>{m}</li>

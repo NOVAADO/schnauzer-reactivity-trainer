@@ -25,7 +25,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   return (
     <>
       <ServiceWorkerRegistration />
-      <main className="max-w-lg mx-auto px-4 pt-4">{children}</main>
+      <main className={`max-w-lg mx-auto px-4 pt-4 ${hasOnboarded && !isOnboarding ? 'pb-20' : ''}`}>{children}</main>
       {hasOnboarded && !isOnboarding && <BottomNav />}
     </>
   );
