@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db/database';
+import type { OnboardingProfile } from './types';
 
 export function useDogs() {
   return useLiveQuery(() => db.dogs.toArray(), []) ?? [];
@@ -41,6 +42,34 @@ export function useHasOnboarded() {
     const count = await db.dogs.count();
     return count >= 1;
   }, []);
+}
+
+export function useOnboardingProfile(): OnboardingProfile | undefined {
+  return useLiveQuery(() => db.onboardingProfile.toCollection().first(), []);
+}
+
+export function useWeekIncidents() {
+  const today = new Date();
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const startStr = weekAgo.toISOString().split('T')[0];
+  const endStr = today.toISOString().split('T')[0];
+  return useLiveQuery(
+    () => db.incidents.where('date').between(startStr, endStr, true, true).toArray(),
+    []
+  ) ?? [];
+}
+
+export function useWeekSessions() {
+  const today = new Date();
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const startStr = weekAgo.toISOString().split('T')[0];
+  const endStr = today.toISOString().split('T')[0];
+  return useLiveQuery(
+    () => db.sessions.where('date').between(startStr, endStr, true, true).toArray(),
+    []
+  ) ?? [];
 }
 
 export function useLatestCareEntries(careTaskId: string, dogId: number) {

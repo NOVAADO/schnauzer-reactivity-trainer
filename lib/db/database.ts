@@ -1,11 +1,12 @@
 import Dexie, { type Table } from 'dexie';
-import type { Dog, TrainingSession, IncidentLog, CareEntry } from '../types';
+import type { Dog, TrainingSession, IncidentLog, CareEntry, OnboardingProfile } from '../types';
 
 class SchnauzDB extends Dexie {
   dogs!: Table<Dog, number>;
   sessions!: Table<TrainingSession, number>;
   incidents!: Table<IncidentLog, number>;
   careEntries!: Table<CareEntry, number>;
+  onboardingProfile!: Table<OnboardingProfile, number>;
 
   constructor() {
     super('SchnauzTrainerDB');
@@ -27,6 +28,14 @@ class SchnauzDB extends Dexie {
           dog.masteredSkills = [];
         }
       });
+    });
+    // v3: ajoute table onboardingProfile
+    this.version(3).stores({
+      dogs: '++id, name, isTriggerDog',
+      sessions: '++id, dogId, exerciseId, date, result',
+      incidents: '++id, dogId, date, context, trigger, intensity',
+      careEntries: '++id, dogId, careTaskId, date',
+      onboardingProfile: '++id',
     });
   }
 }
@@ -212,6 +221,18 @@ export async function getWeeklyStats(endDate: string) {
     .slice(0, 3);
 
   return { days, topInterventions, totalSessions: sessions.length, totalIncidents: incidents.length };
+}
+
+// ---- ONBOARDING PROFILE ----
+
+export async function saveOnboardingProfile(profile: Omit<OnboardingProfile, 'id'>): Promise<number> {
+  // Clear any existing profile first
+  await db.onboardingProfile.clear();
+  return db.onboardingProfile.add(profile as OnboardingProfile);
+}
+
+export async function getOnboardingProfile(): Promise<OnboardingProfile | undefined> {
+  return db.onboardingProfile.toCollection().first();
 }
 
 // Check if onboarding is done

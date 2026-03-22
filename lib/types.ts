@@ -196,6 +196,94 @@ export interface ReactivityProtocol {
   successCriteria: string;
 }
 
+// ---- ONBOARDING & INTERVENTION ----
+
+export interface OnboardingProfile {
+  id?: number;
+  focusDogName: string; // 'Thor', 'Loki', ou 'les deux'
+  mainTriggers: Trigger[]; // top 2-3 déclencheurs
+  dailyMinutes: 5 | 10 | 15;
+  firstHabit: string; // ex: 'capturer_calme', 'faux_departs', 'desensibilisation_bruits'
+  suggestedProtocol: string; // description courte du premier protocole
+  createdAt: string;
+}
+
+export interface QuickInterventionStep {
+  emoji: string;
+  instruction: string;
+}
+
+export interface QuickInterventionScenario {
+  id: string;
+  label: string;
+  emoji: string;
+  color: string; // tailwind bg class
+  steps: QuickInterventionStep[];
+}
+
+export const QUICK_INTERVENTIONS: QuickInterventionScenario[] = [
+  {
+    id: 'depart',
+    label: 'D\u00e9part',
+    emoji: '🚪',
+    color: 'bg-blue-500',
+    steps: [
+      { emoji: '👀', instruction: 'Observe ton chien AVANT que la personne parte' },
+      { emoji: '⏸️', instruction: 'Attends 1 seconde de calme (pas d\u2019aboiement)' },
+      { emoji: '✅', instruction: 'Dis \u00ab oui \u00bb ou clique' },
+      { emoji: '🦴', instruction: 'Donne la g\u00e2terie imm\u00e9diatement' },
+    ],
+  },
+  {
+    id: 'bruit',
+    label: 'Bruit',
+    emoji: '🔊',
+    color: 'bg-orange-500',
+    steps: [
+      { emoji: '👀', instruction: 'Regarde ton chien, pas la source du bruit' },
+      { emoji: '⏸️', instruction: 'Attends qu\u2019il tourne la t\u00eate vers toi' },
+      { emoji: '✅', instruction: 'Marque le moment (\u00ab oui ! \u00bb)' },
+      { emoji: '🦴', instruction: 'R\u00e9compense g\u00e9n\u00e9reusement (3-4 g\u00e2teries)' },
+    ],
+  },
+  {
+    id: 'tele',
+    label: 'T\u00e9l\u00e9',
+    emoji: '📺',
+    color: 'bg-purple-500',
+    steps: [
+      { emoji: '🔇', instruction: 'Mets en pause ou baisse le son' },
+      { emoji: '🫱', instruction: 'Dis calmement \u00ab [nom], place \u00bb' },
+      { emoji: '⏸️', instruction: 'Attends qu\u2019il aille au tapis' },
+      { emoji: '🦴', instruction: 'R\u00e9compense sur le tapis' },
+    ],
+  },
+  {
+    id: 'marche',
+    label: 'Marche',
+    emoji: '🚶',
+    color: 'bg-green-500',
+    steps: [
+      { emoji: '🛑', instruction: 'Arr\u00eate-toi. Ne tire pas sur la laisse' },
+      { emoji: '👀', instruction: 'Attends que ton chien te regarde' },
+      { emoji: '✅', instruction: 'Marque le regard (\u00ab oui ! \u00bb)' },
+      { emoji: '🦴', instruction: 'R\u00e9compense et fais demi-tour si besoin' },
+    ],
+  },
+  {
+    id: 'chien',
+    label: 'Chien au loin',
+    emoji: '🐕',
+    color: 'bg-red-500',
+    steps: [
+      { emoji: '📏', instruction: 'Augmente la distance. \u00c9loigne-toi' },
+      { emoji: '👀', instruction: 'Attends que ton chien regarde le chien SANS r\u00e9agir' },
+      { emoji: '✅', instruction: 'Marque imm\u00e9diatement (\u00ab oui ! \u00bb)' },
+      { emoji: '🦴', instruction: 'R\u00e9compense en continu tant qu\u2019il reste calme' },
+    ],
+  },
+];
+
 // ---- HELPERS ----
 
 export const ACTIVATION_LABELS: Record<number, string> = {
