@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const tabs = [
-  { href: '/', label: 'Accueil', icon: '🏠' },
-  { href: '/education', label: 'Apprendre', icon: '🎓' },
-  { href: '/reactivity', label: 'Réactivité', icon: '⚡' },
-  { href: '/care', label: 'Soins', icon: '🩺' },
-  { href: '/progression', label: 'Progrès', icon: '📊' },
+  { href: '/', label: 'Accueil', icon: '🏠', highlight: false },
+  { href: '/education', label: 'Apprendre', icon: '🎓', highlight: false },
+  { href: '/intervention', label: 'SOS', icon: '🚨', highlight: true },
+  { href: '/reactivity', label: 'Réactivité', icon: '⚡', highlight: false },
+  { href: '/progression', label: 'Progrès', icon: '📊', highlight: false },
 ];
 
 export default function BottomNav() {
@@ -29,10 +29,12 @@ export default function BottomNav() {
               key={tab.href}
               href={tab.href}
               className={`flex flex-col items-center justify-center w-full h-full gap-0.5 text-xs transition-colors ${
-                isActive ? 'text-blue-600 font-semibold' : 'text-gray-500'
+                tab.highlight
+                  ? 'text-red-600 font-bold'
+                  : isActive ? 'text-blue-600 font-semibold' : 'text-gray-500'
               }`}
             >
-              <span className="text-xl">{tab.icon}</span>
+              <span className={tab.highlight ? 'text-2xl -mt-1' : 'text-xl'}>{tab.icon}</span>
               <span>{tab.label}</span>
             </Link>
           );
